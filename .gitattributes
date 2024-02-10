@@ -7,8 +7,6 @@
 
 *.html linguist-detectable=false
 
-* linguist-vendored
-
 *.cs linguist-vendored=false
 
 ###############################################################################
