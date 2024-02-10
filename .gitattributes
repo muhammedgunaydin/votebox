@@ -4,6 +4,8 @@
 * text=auto
 *.cs linguist-language=C#
 
+static/* linguist-vendored
+
 ###############################################################################
 # Set default behavior for command prompt diff.
 #
