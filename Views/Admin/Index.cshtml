@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Admin page</h1>
+    <form method="post" action="/Admin/Logout">
+        <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+</div>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Create Poll</h5>
+                    <p class="card-text">Create a new poll for voting.</p>
+                    <a href="/Admin/CreatePoll" class="btn btn-primary">Go to Create Poll</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Get All Users</h5>
+                    <p class="card-text">View a list of all users.</p>
+                    <a href="/Admin/GetAllUsers" class="btn btn-success">Go to Get All Users</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Get Polls</h5>
+                    <p class="card-text">View a list of all polls.</p>
+                    <a href="/Admin/GetPolls" class="btn btn-info">Go to Get Polls</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

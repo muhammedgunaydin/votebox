@@ -1,0 +1,53 @@
+﻿@model vote_box.Models.PollModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h1 class="display-4">Vote</h1>
+                    </div>
+                    <div class="card-body">
+                        <h2>@Model.Title</h2>
+                        <p>@Model.Description</p>
+                        <p>Start Time: @Model.StartTime.ToString("yyyy-MM-ddTHH:mm")</p>
+                        <p>End Time: @Model.EndTime.ToString("yyyy-MM-ddTHH:mm")</p>
+
+                        <form method="post" action="/User/Vote">
+                            <input type="hidden" name="pollId" value="@Model.Id" />
+
+                            <div class="mb-3">
+                                <label for="optionId" class="form-label">Select Option:</label>
+                                <select id="optionId" name="optionId" class="form-control" required>
+                                    @foreach (var option in Model.Options)
+                                    {
+                                        <option value="@option.Id">@option.Text</option>
+                                    }
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-success">Vote</button>
+                        </form>
+
+                        <a href="/User/ViewPolls" class="btn btn-secondary mt-3">Back to Polls</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

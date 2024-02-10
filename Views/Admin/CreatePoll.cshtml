@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Poll</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h1 class="display-4">Create Poll</h1>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="/Admin/CreatePoll">
+                            <div class="mb-3">
+                                <label for="Title" class="form-label">Title</label>
+                                <input type="text" id="Title" name="Title" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Description" class="form-label">Description</label>
+                                <textarea id="Description" name="Description" class="form-control" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="StartTime" class="form-label">Start Time</label>
+                                <input type="datetime-local" id="StartTime" name="StartTime" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="EndTime" class="form-label">End Time</label>
+                                <input type="datetime-local" id="EndTime" name="EndTime" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Options" class="form-label">Options (Separate with commas)</label>
+                                <input type="text" id="Options" name="Options" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Create Poll</button>
+                        </form>
+
+                        <a href="/Admin/Index" class="btn btn-secondary mt-3">Back to Admin Index</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
